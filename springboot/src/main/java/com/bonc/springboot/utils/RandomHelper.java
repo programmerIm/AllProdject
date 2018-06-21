@@ -1,5 +1,6 @@
 package com.bonc.springboot.utils;
 
+import java.util.Arrays;
 import java.util.Random;
 
 /**
@@ -15,11 +16,12 @@ public class RandomHelper {
         int[] array = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
         Random rand = new Random();
         for (int i = 10; i > 1; i--) {
-            int index = rand.nextInt(i);  //指定生成数字的范围
+            int index = rand.nextInt(i);  //0-i指定生成数字的范围
             int tmp = array[index];
             array[index] = array[i - 1];
             array[i - 1] = tmp;
         }
+        System.out.println("此时数组数据为"+ Arrays.toString(array));
 
         // 获取六位随即数
         int result = 0;
