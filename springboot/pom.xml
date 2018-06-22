@@ -59,6 +59,13 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
+		<!--springboot配置文件自动注入依赖-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-configuration-processor</artifactId>
+			<optional>true</optional>
+		</dependency>
+
 		<!--热部署-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -66,10 +73,18 @@
 			<optional>true</optional>
 		</dependency>
 
+		<!--对jsp支持的依赖包-->
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>jstl</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>org.apache.tomcat.embed</groupId>
+			<artifactId>tomcat-embed-jasper</artifactId>
+			<version>8.5.11</version>
+			<!--<scope>provided</scope>-->
+		</dependency>
+
 
 		<!-- 分页插件 -->
 		<dependency>
