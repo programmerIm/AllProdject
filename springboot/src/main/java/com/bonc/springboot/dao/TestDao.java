@@ -12,5 +12,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface TestDao {
 
-     public User queryUser(String message);
+      User queryUser(String message);
+
+     User  queryUserByObject(User user);
 }

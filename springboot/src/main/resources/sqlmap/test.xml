@@ -4,4 +4,18 @@
 <select id="queryUser" parameterType="java.lang.String" resultType="com.bonc.springboot.entity.User">
     select u.id as "Id",u.name as "name",u.age as "age" from user u where u.id = #{message}
 </select>
+
+<select id="queryUserByObject" parameterType="com.bonc.springboot.entity.User" resultType="com.bonc.springboot.entity.User">
+    select u.id as "id",u.name as "name",u.age as "age" from user u where 1=1
+    <if test="id!=null and id !=''">
+      and    u.id = #{id}
+    </if>
+    <if test="name!=null and name !=''">
+      and  u.name = #{name}
+    </if>
+    <if test="age!=null and age !=''">
+     and    u.age = #{age}
+    </if>
+</select>
+
 </mapper>
