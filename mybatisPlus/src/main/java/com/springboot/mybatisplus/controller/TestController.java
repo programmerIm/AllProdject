@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import com.springboot.mybatisplus.service.TestService;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 /**
  * @author:liming
@@ -21,5 +22,10 @@ public class TestController {
     public void getEmployeeById(String id){
      Employee employee=  testService.queryEmployeeById(id);
         System.out.println(employee.toString());
+    }
+
+    @RequestMapping(value = "/testMenthod")
+    public void getEmployeeById(){
+        System.out.println("----------------进行测试热部署!--");
     }
 }
