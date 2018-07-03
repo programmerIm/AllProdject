@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.springboot.mybatisplus.dao.EmployeeMapper">
+    <select id="queryEmployeeById" parameterType="java.lang.String" resultType="com.springboot.mybatisplus.entity.Employee">
+       select * from tbl_employee where id = #{id}
+    </select>
+
+</mapper>
