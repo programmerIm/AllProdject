@@ -12,13 +12,13 @@ import com.springboot.mybatisplus.dao.EmployeeMapper;
  * @Description:
  * @Date:create in 2018/7/3   15:48
  */
-@Service("testService")
+@Service("TestService")
 public class TestServiceImpl extends ServiceImpl<EmployeeMapper,Employee> implements TestService {
     @Autowired
     private EmployeeMapper testDao;
 
     public Employee queryEmployeeById(String id){
-       return testDao.queryEmployeeById(id);
+       return   testDao.queryEmployeeById(id);
     }
 
 }

@@ -17,6 +17,7 @@ import org.mybatis.spring.boot.autoconfigure.SpringBootVFS;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceBuilder;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
@@ -34,7 +35,7 @@ import javax.sql.DataSource;
  * @Description:
  * @Date:create in 2018/7/3   15:37
  */
-@Configuration
+@SpringBootConfiguration
 public class MybatisPlusConfig {
 
   /*  @Autowired

@@ -6,13 +6,16 @@ import org.springframework.stereotype.Controller;
 import com.springboot.mybatisplus.service.TestService;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 /**
  * @author:liming
  * @Description:
  * @Date:create in 2018/7/3   15:54
  */
-@Controller
+@RestController
 @RequestMapping(value="/test")
 public class TestController {
     @Autowired
@@ -20,7 +23,7 @@ public class TestController {
 
     @RequestMapping(value = "/getEmployeeById")
     public void getEmployeeById(String id){
-     Employee employee=  testService.queryEmployeeById(id);
+       Employee employee =   testService.queryEmployeeById(id);
         System.out.println(employee.toString());
     }
 

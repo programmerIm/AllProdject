@@ -5,6 +5,9 @@ import com.springboot.mybatisplus.entity.Employee;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+import java.util.Map;
+
 /**
  * @author:liming
  * @Description:
@@ -12,6 +15,5 @@ import org.springframework.stereotype.Repository;
  */
 @Mapper
 public interface EmployeeMapper  extends  BaseMapper<Employee>{
-
     Employee queryEmployeeById(String id);
 }
