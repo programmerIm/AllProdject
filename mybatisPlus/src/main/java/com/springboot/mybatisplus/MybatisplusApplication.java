@@ -20,7 +20,6 @@ public class MybatisplusApplication {
 	public static void main(String[] args) {
 		ConfigurableApplicationContext context = SpringApplication.run(MybatisplusApplication.class, args);
 		DataSource dataSource = context.getBean(DataSource.class);
-		System.out.println("数据源连接已经启动---------");
-		System.out.println("数据源为-------："+dataSource.getClass());
+		System.out.println("数据源连接已经启动---数据源为："+dataSource.getClass());
 	}
 }

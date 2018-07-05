@@ -31,4 +31,15 @@ public class TestController {
     public void getEmployeeById(){
         System.out.println("----------------进行测试热部署!--");
     }
+
+    @RequestMapping(value = "/testInsert")
+    public void testInsert(){
+        Employee  employee = new Employee();
+        employee.setAge(18);
+        employee.setEmail("bonc@com.cm");
+        employee.setGender(1);
+        employee.setLastName("lisan");
+        testService.insert(employee);
+    }
+
 }
