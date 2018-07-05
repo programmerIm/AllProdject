@@ -1,5 +1,7 @@
 package com.springboot.mybatisplus.entity;
 
+import com.baomidou.mybatisplus.annotations.TableField;
+
 /**
  * @author:liming
  * @Description:
@@ -11,6 +13,10 @@ public class Employee {
     private String lastName;
     private String email;
     private Integer gender;
+
+  //  @TableField(exist = false)
+    private String   order;
+
 
     public Integer getId() {
         return id;
@@ -61,5 +67,13 @@ public class Employee {
                 ", email='" + email + '\'' +
                 ", gender='" + gender + '\'' +
                 '}';
+    }
+
+    public String getOrder() {
+        return order;
+    }
+
+    public void setOrder(String order) {
+        this.order = order;
     }
 }

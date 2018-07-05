@@ -37,9 +37,39 @@ public class TestController {
         Employee  employee = new Employee();
         employee.setAge(18);
         employee.setEmail("bonc@com.cm");
-        employee.setGender(1);
-        employee.setLastName("lisan");
-        testService.insert(employee);
+       /* employee.setGender(1);
+        employee.setLastName("lisan");*/
+        employee.setOrder("111"); //自动被过滤
+       //  testService.insert(employee);
+     Boolean  falg =   testService.insertAllColumn(employee);
+        System.out.println(falg);
+         //返回新增主键
+        Integer id = employee.getId();
+        System.out.println("新增实体类主键Key为："+id);
+    }
+
+
+    /**
+     * 通用更新
+     */
+    @RequestMapping(value="/testUpdate")
+    public void testUpdate(){
+     Employee employee = new Employee();
+     employee.setEmail("xiaoze@qq.com");
+     employee.setId(12);
+     testService.updateById(employee);
+    }
+
+    @RequestMapping(value="/testSelect")
+    public void testSelect(){
+     Employee employee = testService.selectById(8);
+        System.out.println(employee.toString());
+    }
+
+    @RequestMapping(value="/testDelete")
+    public void testDelete(){
+        Boolean reslut =  testService.deleteById(8);
+        System.out.println(reslut);
     }
 
 }
