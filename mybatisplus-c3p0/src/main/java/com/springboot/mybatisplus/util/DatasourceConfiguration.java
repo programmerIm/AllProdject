@@ -1,5 +1,7 @@
 package com.springboot.mybatisplus.util;
 
+import com.baomidou.mybatisplus.entity.GlobalConfiguration;
+import com.baomidou.mybatisplus.spring.MybatisSqlSessionFactoryBean;
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -46,20 +48,31 @@ public class DatasourceConfiguration {
     @Value("${mapper.package.path}")
     private String mapperPackagePath;
 
-    /**
-     *返回sqlSessionFactory
-     */
+    @Value("${mybatis-plus.global-config.table-prefix}")
+    private String  tablePrefix;
+    @Value("${mybatis-plus.global-config.id-type}")
+    private int  idType;
+    @Value("${mybatis-plus.global-config.db-column-underline}")
+    private boolean  dbColumnnUnderline;
+
     @Bean
-    public SqlSessionFactoryBean sqlSessionFactoryBean() throws IOException {
-        SqlSessionFactoryBean sqlSessionFactory = new SqlSessionFactoryBean();
+    public MybatisSqlSessionFactoryBean sqlSessionFactoryBean() throws IOException {
+        MybatisSqlSessionFactoryBean sqlSessionFactory = new MybatisSqlSessionFactoryBean();
         PathMatchingResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
         String packageXMLConfigPath = PathMatchingResourcePatternResolver.CLASSPATH_ALL_URL_PREFIX + mapperXMLConfigPath;
+
+        GlobalConfiguration globalConfig = new GlobalConfiguration();
+        globalConfig.setIdType(idType); //主键生成策略
+        globalConfig.setTablePrefix(tablePrefix);  //表前缀
+        globalConfig.setDbColumnUnderline(dbColumnnUnderline);  //驼峰下划线
+        sqlSessionFactory.setGlobalConfig(globalConfig);
         // 设置mapper 对应的XML 文件的路径
         sqlSessionFactory.setMapperLocations(resolver.getResources(packageXMLConfigPath));
         // 设置mapper 接口所在的包
         sqlSessionFactory.setTypeAliasesPackage(mapperPackagePath);
         // 设置数据源
         sqlSessionFactory.setDataSource(dataSource());
+
         return sqlSessionFactory;
     }
 }

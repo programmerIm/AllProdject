@@ -4,7 +4,6 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 
@@ -15,10 +14,10 @@ import javax.sql.DataSource;
 @MapperScan(basePackages="com.springboot.mybatisplus.dao")
 @EnableAutoConfiguration
 @SpringBootApplication
-public class MybatisplusApplication {
+public class MybatisplusC3p0Application {
 
 	public static void main(String[] args) {
-		ConfigurableApplicationContext context = SpringApplication.run(MybatisplusApplication.class, args);
+		ConfigurableApplicationContext context = SpringApplication.run(MybatisplusC3p0Application.class, args);
 		DataSource dataSource = context.getBean(DataSource.class);
 		System.out.println("数据源连接已经启动---------");
 		System.out.println("数据源为-------："+dataSource.getClass());
