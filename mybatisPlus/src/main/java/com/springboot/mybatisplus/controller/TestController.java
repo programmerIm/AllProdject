@@ -1,5 +1,8 @@
 package com.springboot.mybatisplus.controller;
 
+import com.baomidou.mybatisplus.mapper.EntityWrapper;
+import com.baomidou.mybatisplus.plugins.Page;
+import com.springboot.mybatisplus.dao.EmployeeMapper;
 import com.springboot.mybatisplus.entity.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -20,6 +23,10 @@ import java.util.List;
 public class TestController {
     @Autowired
     private TestService testService;
+
+    @Autowired
+    private EmployeeMapper  employeeMapper;
+
 
     @RequestMapping(value = "/getEmployeeById")
     public void getEmployeeById(String id){
@@ -68,8 +75,40 @@ public class TestController {
 
     @RequestMapping(value="/testDelete")
     public void testDelete(){
-        Boolean reslut =  testService.deleteById(8);
+       Boolean reslut =  testService.deleteById(8);
+        //  Integer result = employeeMapper.deleteById(8);  //直接用Mapper去执行，查看运行原理
         System.out.println(reslut);
     }
+
+
+    /**
+     * 调价构造器  - 查询分页
+     * 条件：查询一也一个，年龄18到25，名字中带有  “lisan”的
+     */
+    @RequestMapping(value="/testSelectPage")
+   public void testSelectPage(){
+
+     /*   Page<Employee>  employees =  testService.selectPage(new Page<Employee>(1,1), new EntityWrapper<Employee>().between("age",18,25).like("last_name","lisan"));
+        System.out.println(employees);*/    //使用sever返回的是page对象
+    List<Employee>   employees  =    employeeMapper.selectPage(new Page<Employee>(1,1), new EntityWrapper<Employee>().between("age",18,25).like("last_name","lisan"));
+        System.out.println(employees);   //使用mapper返回的是List
+    }
+
+    @RequestMapping(value="/testUpdatePage")
+    public void testUpdatePage(){
+        Employee employee = new Employee();
+        employee.setAge(50);
+        employee.setLastName("赵四");
+        employeeMapper.update(employee,new EntityWrapper<Employee>().eq("age",18).eq("gender",0));
+
+    }
+
+    @RequestMapping(value="/testDeletePage")
+    public void testDeletePage(){
+
+        employeeMapper.delete(new EntityWrapper<Employee>().eq("age",18));
+
+    }
+
 
 }
