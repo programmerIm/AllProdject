@@ -35,7 +35,7 @@ import java.util.Map;
             GlobalConfig config = new GlobalConfig();
             config.setActiveRecord(false)
                     .setAuthor("liming")  //作者
-                    .setOutputDir("E:\\IDEA\\mavn\\mybatisplus\\src\\main\\java")  //文件存储路径
+                    .setOutputDir("E:\\IDEA\\AllProject\\mybatisplus\\src\\main\\java")  //文件存储路径
                     .setFileOverride(true)//文件覆盖
                     .setEnableCache(false)
                      .setBaseResultMap(true)
@@ -100,9 +100,9 @@ import java.util.Map;
             mpg.setCfg(cfg);
 
             // 关闭默认 xml 生成，调整生成 至 根目录
-        /*    TemplateConfig tc = new TemplateConfig();
+          TemplateConfig tc = new TemplateConfig();
             tc.setXml(null); //不放置自定义模版 ，参数类型为模版路径/文件名  例：/templates/mapper2.xml
-            mpg.setTemplate(tc);*/
+            mpg.setTemplate(tc);
 
             mpg.execute();
         }
