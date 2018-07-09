@@ -1,26 +1,26 @@
 package com.springboot.mybatisplus;
 
+import com.baomidou.mybatisplus.plugins.Page;
 import com.springboot.mybatisplus.dao.EmployeeMapper;
 import com.springboot.mybatisplus.entity.Employee;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.List;
+
 /**
  * @author:liming
  * @Description:
- * @Date:create in 2018/7/3   15:16
+ * @Date:create in 2018/7/9   19:08
  */
-public class testMp {
+public class TestMp {
 
     @Autowired
-    private EmployeeMapper employeeMapper;
+    private EmployeeMapper  employeeMapper;
+
     @Test
-    public void testInsert(){
-        Employee  employee = new Employee();
-        employee.setAge(18);
-        employee.setEmail("bonc@com.cm");
-        employee.setGender(1);
-        employee.setLastName("lisan");
-        employeeMapper.insert(employee);
+    public void testInterator(){
+        List<Employee> list =  employeeMapper.selectPage(new Page<Employee>(1,1),null);
+        System.out.println(list);
     }
 }

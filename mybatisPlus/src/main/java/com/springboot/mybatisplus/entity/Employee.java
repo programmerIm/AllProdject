@@ -1,13 +1,16 @@
 package com.springboot.mybatisplus.entity;
 
+import com.baomidou.mybatisplus.activerecord.Model;
 import com.baomidou.mybatisplus.annotations.TableField;
+
+import java.io.Serializable;
 
 /**
  * @author:liming
  * @Description:
  * @Date:create in 2018/7/3   11:00
  */
-public class Employee {
+public class Employee extends Model<Employee>{
     private Integer id;
     private Integer age;
     private String lastName;
@@ -75,5 +78,10 @@ public class Employee {
 
     public void setOrder(String order) {
         this.order = order;
+    }
+
+    @Override
+    protected Serializable pkVal() {
+        return  this.id;
     }
 }

@@ -65,11 +65,11 @@ public class MybatisPlusConfig {
      */
     @Bean
     public PaginationInterceptor paginationInterceptor() {
-        return new PaginationInterceptor();
+       /* return new PaginationInterceptor();*/
 
-      /*  PaginationInterceptor page = new PaginationInterceptor();
+      PaginationInterceptor page = new PaginationInterceptor();
         page.setDialectType("mysql");
-        return page;*/
+        return page;
     }
     /**
      * 这里全部使用mybatis-autoconfigure 已经自动加载的资源。不手动指定
