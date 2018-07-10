@@ -111,4 +111,30 @@ public class TestController {
     }
 
 
+    /**
+     * 分页插件测试
+     */
+    @RequestMapping(value = "/testPageIntreceptor")
+    public void testPaginationInterceptor(){
+        Page<Employee>  page  = new Page<>(1,1);
+
+        List<Employee> list = employeeMapper.selectPage(page,null);
+        System.out.println("---------可以返回很多Page对象信息-------");
+        System.out.println("总的记录数"+page.getTotal());
+        System.out.println("总的页数:"+page.getPages());
+        System.out.println("当前页数:"+page.getCurrent());
+        System.out.println("是否有上一页"+page.hasPrevious());
+        System.out.println("是否有下一页"+page.hasNext());
+
+        page.setRecords(list);  //将查询的集合返回到page对象中
+        //可以将整个page对象返回到jsp
+    }
+
+
+    @RequestMapping(value="/testSqlInterceptor")
+    public void testSqlExplainInterceptor(){
+        employeeMapper.delete(null);
+
+    }
+
 }

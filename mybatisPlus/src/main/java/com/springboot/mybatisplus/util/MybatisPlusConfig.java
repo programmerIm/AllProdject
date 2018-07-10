@@ -6,6 +6,7 @@ import com.baomidou.mybatisplus.entity.GlobalConfiguration;
 import com.baomidou.mybatisplus.enums.DBType;
 import com.baomidou.mybatisplus.plugins.PaginationInterceptor;
 import com.baomidou.mybatisplus.plugins.PerformanceInterceptor;
+import com.baomidou.mybatisplus.plugins.SqlExplainInterceptor;
 import com.baomidou.mybatisplus.spring.MybatisSqlSessionFactoryBean;
 
 import org.apache.ibatis.mapping.DatabaseIdProvider;
@@ -61,7 +62,6 @@ public class MybatisPlusConfig {
 
     /**
      * 分页插件
-     * @return
      */
     @Bean
     public PaginationInterceptor paginationInterceptor() {
@@ -71,6 +71,19 @@ public class MybatisPlusConfig {
         page.setDialectType("mysql");
         return page;
     }
+
+   /*
+     执行分析插件
+    */
+   @Bean
+   public SqlExplainInterceptor sqlExplainInterceptor(){
+       SqlExplainInterceptor sqlExplainInterceptor = new SqlExplainInterceptor();
+       sqlExplainInterceptor.setStopProceed(true); //该参数就是对于全表操作是否停止
+       return sqlExplainInterceptor;
+   }
+
+
+
     /**
      * 这里全部使用mybatis-autoconfigure 已经自动加载的资源。不手动指定
      * 配置文件和mybatis-boot的配置文件同步
