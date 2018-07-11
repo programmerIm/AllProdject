@@ -4,6 +4,8 @@ import com.baomidou.mybatisplus.MybatisConfiguration;
 import com.baomidou.mybatisplus.MybatisXMLLanguageDriver;
 import com.baomidou.mybatisplus.entity.GlobalConfiguration;
 import com.baomidou.mybatisplus.enums.DBType;
+import com.baomidou.mybatisplus.mapper.LogicSqlInjector;
+import com.baomidou.mybatisplus.plugins.OptimisticLockerInterceptor;
 import com.baomidou.mybatisplus.plugins.PaginationInterceptor;
 import com.baomidou.mybatisplus.plugins.PerformanceInterceptor;
 import com.baomidou.mybatisplus.plugins.SqlExplainInterceptor;
@@ -81,6 +83,23 @@ public class MybatisPlusConfig {
        sqlExplainInterceptor.setStopProceed(true); //该参数就是对于全表操作是否停止
        return sqlExplainInterceptor;
    }
+
+
+    /**
+     * 乐观锁插件
+     */
+/* @Bean
+ public OptimisticLockerInterceptor optimisticLockerInterceptor(){
+    return   new OptimisticLockerInterceptor();
+ }*/
+
+    /*
+       逻辑删除
+     */
+    @Bean
+    public LogicSqlInjector logicSqlInjector(){
+    return new LogicSqlInjector();
+ }
 
 
 

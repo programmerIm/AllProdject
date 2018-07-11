@@ -3,6 +3,7 @@ package com.springboot.mybatisplus.controller;
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.baomidou.mybatisplus.plugins.Page;
 import com.springboot.mybatisplus.dao.EmployeeMapper;
+import com.springboot.mybatisplus.dao.StudentMapper;
 import com.springboot.mybatisplus.entity.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -26,6 +27,9 @@ public class TestController {
 
     @Autowired
     private EmployeeMapper  employeeMapper;
+
+    @Autowired
+    private StudentMapper studentMapper;
 
 
     @RequestMapping(value = "/getEmployeeById")
@@ -137,4 +141,21 @@ public class TestController {
 
     }
 
+
+    /**
+     * 测试自定义注入方法
+     */
+    @RequestMapping(value="/testMysql")
+   public void MysqlInjectorMethod(){
+ Employee employee =  employeeMapper.queryEmployeeById("2");
+        System.out.println(employee.toString());
+    }
+
+    /*
+     测试逻辑删除
+     */
+    @RequestMapping(value = "/testLogicDelete")
+    public void testLogicDelete(){
+        studentMapper.deleteById(1);
+    }
 }

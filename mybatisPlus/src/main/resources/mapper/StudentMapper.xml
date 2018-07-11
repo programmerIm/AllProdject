@@ -8,6 +8,7 @@
         <result column="class_name" property="className" />
         <result column="student_name" property="studentName" />
         <result column="age" property="age" />
+        <result column="login_flag" property="loginFlag" />
     </resultMap>
 
 </mapper>
