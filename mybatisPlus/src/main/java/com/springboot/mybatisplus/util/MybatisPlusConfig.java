@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.MybatisConfiguration;
 import com.baomidou.mybatisplus.MybatisXMLLanguageDriver;
 import com.baomidou.mybatisplus.entity.GlobalConfiguration;
 import com.baomidou.mybatisplus.enums.DBType;
+import com.baomidou.mybatisplus.incrementer.OracleKeyGenerator;
 import com.baomidou.mybatisplus.mapper.LogicSqlInjector;
 import com.baomidou.mybatisplus.plugins.OptimisticLockerInterceptor;
 import com.baomidou.mybatisplus.plugins.PaginationInterceptor;
@@ -70,7 +71,8 @@ public class MybatisPlusConfig {
        /* return new PaginationInterceptor();*/
 
       PaginationInterceptor page = new PaginationInterceptor();
-        page.setDialectType("mysql");
+      //  page.setDialectType("mysq;");
+        page.setDialectType("oracle");
         return page;
     }
 
@@ -101,7 +103,13 @@ public class MybatisPlusConfig {
     return new LogicSqlInjector();
  }
 
-
+     /*
+       oracle 主键序列接口
+      */
+    @Bean
+     public OracleKeyGenerator  oracleKeyGenerator(){
+            return new OracleKeyGenerator();
+    }
 
     /**
      * 这里全部使用mybatis-autoconfigure 已经自动加载的资源。不手动指定

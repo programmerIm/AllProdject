@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.plugins.Page;
 import com.springboot.mybatisplus.dao.EmployeeMapper;
 import com.springboot.mybatisplus.dao.StudentMapper;
 import com.springboot.mybatisplus.entity.Employee;
+import com.springboot.mybatisplus.entity.Student;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import com.springboot.mybatisplus.service.TestService;
@@ -158,4 +159,30 @@ public class TestController {
     public void testLogicDelete(){
         studentMapper.deleteById(1);
     }
+
+
+    /*
+      自动填充
+     */
+    @RequestMapping(value="/testMetaHandler")
+    public void testMetaHandler(){
+   Employee  employee = new Employee();
+   employee.setAge(18);
+    employeeMapper.insert(employee);
+    }
+
+      /*
+        测试oracle主键自增
+         */
+        @RequestMapping(value = "/testOracle")
+      public  void testOracleSequence(){
+            Student student = new Student();
+         /*   student.setId(108);*/
+            student.setAge(18);
+            student.setClassName("hhaha");
+            student.setLoginFlag(1);
+            student.setStudentName("lisan");
+            studentMapper.insert(student);
+      }
+
 }

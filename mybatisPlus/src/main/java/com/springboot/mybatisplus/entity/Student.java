@@ -1,5 +1,6 @@
 package com.springboot.mybatisplus.entity;
 
+import com.baomidou.mybatisplus.annotations.KeySequence;
 import com.baomidou.mybatisplus.annotations.TableId;
 import com.baomidou.mybatisplus.annotations.TableLogic;
 import com.baomidou.mybatisplus.enums.IdType;
@@ -14,13 +15,14 @@ import java.io.Serializable;
  * @author liming
  * @since 2018-07-11
  */
+@KeySequence(value = "tb_st",clazz = Integer.class)  //写表的序列名称
 @TableName("tbl_student")
 public class Student implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
     private String className;
-    @TableId(value = "id", type = IdType.AUTO)
+  //@TableId(value = "id", type = IdType.INPUT)
     private Integer id;
     private String studentName;
     private Integer age;
