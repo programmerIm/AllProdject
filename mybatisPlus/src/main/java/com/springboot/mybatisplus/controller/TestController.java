@@ -3,7 +3,9 @@ package com.springboot.mybatisplus.controller;
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.baomidou.mybatisplus.plugins.Page;
 import com.springboot.mybatisplus.dao.EmployeeMapper;
+import com.springboot.mybatisplus.dao.StudentMapper;
 import com.springboot.mybatisplus.entity.Employee;
+import com.springboot.mybatisplus.entity.Student;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import com.springboot.mybatisplus.service.TestService;
@@ -26,6 +28,9 @@ public class TestController {
 
     @Autowired
     private EmployeeMapper  employeeMapper;
+
+    @Autowired
+    private StudentMapper studentMapper;
 
 
     @RequestMapping(value = "/getEmployeeById")
@@ -136,5 +141,48 @@ public class TestController {
         employeeMapper.delete(null);
 
     }
+
+
+    /**
+     * 测试自定义注入方法
+     */
+    @RequestMapping(value="/testMysql")
+   public void MysqlInjectorMethod(){
+ Employee employee =  employeeMapper.queryEmployeeById("2");
+        System.out.println(employee.toString());
+    }
+
+    /*
+     测试逻辑删除
+     */
+    @RequestMapping(value = "/testLogicDelete")
+    public void testLogicDelete(){
+        studentMapper.deleteById(1);
+    }
+
+
+    /*
+      自动填充
+     */
+    @RequestMapping(value="/testMetaHandler")
+    public void testMetaHandler(){
+   Employee  employee = new Employee();
+   employee.setAge(18);
+    employeeMapper.insert(employee);
+    }
+
+      /*
+        测试oracle主键自增
+         */
+        @RequestMapping(value = "/testOracle")
+      public  void testOracleSequence(){
+            Student student = new Student();
+         /*   student.setId(108);*/
+            student.setAge(18);
+            student.setClassName("hhaha");
+            student.setLoginFlag(1);
+            student.setStudentName("lisan");
+            studentMapper.insert(student);
+      }
 
 }

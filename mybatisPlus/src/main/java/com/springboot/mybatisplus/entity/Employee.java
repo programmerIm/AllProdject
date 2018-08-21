@@ -2,6 +2,7 @@ package com.springboot.mybatisplus.entity;
 
 import com.baomidou.mybatisplus.activerecord.Model;
 import com.baomidou.mybatisplus.annotations.TableField;
+import com.baomidou.mybatisplus.enums.FieldFill;
 
 import java.io.Serializable;
 
@@ -13,6 +14,7 @@ import java.io.Serializable;
 public class Employee extends Model<Employee>{
     private Integer id;
     private Integer age;
+    @TableField(fill = FieldFill.INSERT_UPDATE)
     private String lastName;
     private String email;
     private Integer gender;

@@ -84,6 +84,11 @@
 			<version>RELEASE</version>
 		</dependency>
 
+		<!--junit test依赖-->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+		</dependency>
 	</dependencies>
 
 	<build>
