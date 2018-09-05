@@ -3,8 +3,12 @@ package com.bonc.springboot.controller;
 
 import com.bonc.springboot.autoConfigure.TestProperties;
 import com.bonc.springboot.entity.ParamBo;
+import com.bonc.springboot.entity.TestClassQuery;
+import com.bonc.springboot.entity.User;
+import com.bonc.springboot.utils.SpringUtil;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import org.aspectj.weaver.ast.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,10 +41,9 @@ public class TestController {
 
     @ApiOperation(value="普通参数请求")
     @RequestMapping(value="/test1", method = RequestMethod.GET,produces="application/json;charset=UTF-8")
-    @ResponseBody
-    public void test1(@RequestParam(name="mes",required = true ) String mes){
-        System.out.println("参数为"+mes);
-        testService.queryUser(mes);
+    public @ResponseBody User test1(@RequestParam(name="id",required = true ) String id){
+        System.out.println("参数为"+id);
+       return  testService.queryUser(id); //通过id查询
     }
 
     /*
@@ -73,4 +76,9 @@ public class TestController {
    }
 
 
+   //普通类进行构造的时候，可以调用dao 对象
+   @RequestMapping(value="/testClassQuery")
+   public  void  testClassQuery(){
+     TestClassQuery testClassQuery =new TestClassQuery();
+   }
 }

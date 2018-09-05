@@ -17,24 +17,24 @@ import java.util.Random;
 @Component
 public class TimeTaskOne {
 
-    @Scheduled(cron = "0 0/1  * * * ?")  //项目启动每一分钟执行一次
+   // @Scheduled(cron = "0 0/1  * * * ?")  //项目启动每一分钟执行一次
     public void timeTaskJob(){
         System.out.println("now time:" + new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));
     }
 
-    @Scheduled(fixedRate = 5000)  //项目启动后，每五秒执行一次
+   // @Scheduled(fixedRate = 5000)  //项目启动后，每五秒执行一次
     public void timerToZZP(){
         System.out.println("ZZP:" + new Random().nextLong() + new SimpleDateFormat("HH:mm:ss").format(new Date()));
     }
 
-    @Scheduled(fixedDelay = 50000)  //50秒后开始执行
+   // @Scheduled(fixedDelay = 50000)  //50秒后开始执行
     public void timerToReportCount(){
         for (int i = 0; i < 10; i++){
             System.out.println("<================its" + i + "count===============>" + new SimpleDateFormat("HH:mm:ss").format(new Date()));
         }
     }
 
-    @Scheduled(initialDelay = 50000,fixedRate = 6000)  //启动后50秒，每6秒执行一次
+    //@Scheduled(initialDelay = 50000,fixedRate = 6000)  //启动后50秒，每6秒执行一次
     public void timerToReport(){
         for (int i = 0; i < 10; i++){
             System.out.println("<================delay :" + i + new SimpleDateFormat("HH:mm:ss").format(new Date()) + "count===============>");
