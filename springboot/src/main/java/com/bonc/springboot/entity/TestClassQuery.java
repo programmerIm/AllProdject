@@ -17,6 +17,8 @@ public  class TestClassQuery {
     //或
     public  TestDao dao = SpringUtil.getBean(TestDao.class);
 
+//    public UserMapper userMapper = appCtx.getBean(UserMapper.class);
+
     private  User user;
 
     public User getUser() {
