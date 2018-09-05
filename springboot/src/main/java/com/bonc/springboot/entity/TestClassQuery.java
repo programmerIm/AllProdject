@@ -12,10 +12,10 @@ import org.springframework.context.ApplicationContext;
  */
 
 public  class TestClassQuery {
-    ApplicationContext appCtx = SpringUtil.getApplicationContext();
-    public  TestDao dao = appCtx.getBean(TestDao.class);
-
-//    public UserMapper userMapper = appCtx.getBean(UserMapper.class);
+    /*ApplicationContext appCtx = SpringUtil.getApplicationContext();
+    public  TestDao dao = appCtx.getBean(TestDao.class);*/
+    //或
+    public  TestDao dao = SpringUtil.getBean(TestDao.class);
 
     private  User user;
 
