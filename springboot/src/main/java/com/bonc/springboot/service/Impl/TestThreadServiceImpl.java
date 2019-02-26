@@ -35,30 +35,33 @@ public class TestThreadServiceImpl {
     public static void main(String args[]) {
         ExecutorService fixPool = Executors.newFixedThreadPool(4);
         String sql = "select min(Rec_id) from  xxx";
-        for (int i = 1; i <= 5; i++) {  //模拟31个省，传递的值为省份id,
+        for (int i = 1; i <= 4; i++) {  //模拟31个省，传递的值为省份id,
             fixPool.execute(getThread(i,sql));
         }
         fixPool.shutdown();
         System.out.println("最终的结果是:"+num.get());
     }
 
-    private static  AtomicInteger num =new AtomicInteger(0);
+    private static  AtomicInteger num =new AtomicInteger(0); //线程安全的变量
+
     private static Runnable getThread(final int i,final  String sql) {
         return new Runnable() {
             @Override
             public void run() {
                 try {
                     System.out.println("这一次要执行的sql:"+sql );
-                    num.addAndGet(i);//相当于+ 的操作
+                    synchronized (num){ //针对当前类的变量上锁
+                        num.addAndGet(i);
+                    }
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
                 System.out.println("Thread id is "+Thread.currentThread().getId());
-                printNum(num);
             }
         };
     }
-    public static  void  printNum(AtomicInteger num){
-        System.out.println("传递过来的结果是:"+num.get());
-    }
+
+   /* public static  void  printNum(Integer i){
+        num.addAndGet(i);//相当于+ 的操作
+    }*/
 }
