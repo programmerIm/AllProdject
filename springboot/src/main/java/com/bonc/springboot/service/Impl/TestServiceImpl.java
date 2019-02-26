@@ -7,6 +7,9 @@ import com.bonc.springboot.service.TestService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
 @Service("testService")
 class TestServiceImpl implements TestService{
 
@@ -25,4 +28,6 @@ class TestServiceImpl implements TestService{
       User user =  testDao.queryUserByObject(bo.getUser());
       bo.setUser(user);
     }
+
+
 }

@@ -1,7 +1,7 @@
 package com.springboot.mybatisplus.service;
 
-import com.springboot.mybatisplus.entity.Student;
 import com.baomidou.mybatisplus.service.IService;
+import com.springboot.mybatisplus.entity.Student;
 
 /**
  * <p>

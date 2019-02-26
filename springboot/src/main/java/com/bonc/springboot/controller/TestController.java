@@ -14,10 +14,12 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Controller;
+import org.springframework.util.ClassUtils;
 import org.springframework.web.bind.annotation.*;
 import com.bonc.springboot.service.TestService;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.io.File;
 import java.util.HashMap;
 import  java.util.Map;
 
@@ -80,5 +82,13 @@ public class TestController {
    @RequestMapping(value="/testClassQuery")
    public  void  testClassQuery(){
      TestClassQuery testClassQuery =new TestClassQuery();
+   }
+
+
+   @RequestMapping(value = "/testPath")
+    public  void testPath(){
+     String path = ClassUtils.getDefaultClassLoader().getResource("").getPath();
+       System.out.println(path);
+       File file = new File(path+"/hello.txt");
    }
 }
