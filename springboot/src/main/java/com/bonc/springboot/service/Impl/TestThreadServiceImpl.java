@@ -1,14 +1,11 @@
 package com.bonc.springboot.service.Impl;
 
-import java.util.concurrent.BlockingQueue;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * @author:liming
- * @Description:
+ * @Description: 多线程 执行update sql 统计更新条数，模拟
  * @Date:create in 2019/2/26   11:17
  */
 public class TestThreadServiceImpl {
@@ -16,7 +13,7 @@ public class TestThreadServiceImpl {
     protected BlockingQueue<Object> buffer = new LinkedBlockingQueue<Object>();
 
     //定义线程数
-    int  iLocalThreadNum = 4;
+   private int  iLocalThreadNum = 4;
 
     public void testThread(){
 
@@ -31,18 +28,24 @@ public class TestThreadServiceImpl {
           }
     }
 
+   private static CountDownLatch count;//计数器
+   private static  AtomicInteger num =new AtomicInteger(0); //线程安全的变量
 
     public static void main(String args[]) {
         ExecutorService fixPool = Executors.newFixedThreadPool(4);
+        count = new CountDownLatch(4);
         String sql = "select min(Rec_id) from  xxx";
-        for (int i = 1; i <= 4; i++) {  //模拟31个省，传递的值为省份id,
+        for (int i = 1; i <= 7; i++) {  //模拟31个省，传递的值为省份id,
             fixPool.execute(getThread(i,sql));
         }
-        fixPool.shutdown();
-        System.out.println("最终的结果是:"+num.get());
+        try {
+            count.await();//等待所有线程跑完
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        fixPool.shutdown(); //关闭线程资源
+        System.out.println("最终的结果是:"+num.get());//输出最终结果
     }
-
-    private static  AtomicInteger num =new AtomicInteger(0); //线程安全的变量
 
     private static Runnable getThread(final int i,final  String sql) {
         return new Runnable() {
@@ -50,18 +53,14 @@ public class TestThreadServiceImpl {
             public void run() {
                 try {
                     System.out.println("这一次要执行的sql:"+sql );
-                    synchronized (num){ //针对当前类的变量上锁
                         num.addAndGet(i);
-                    }
+                    System.out.println("Thread id is "+Thread.currentThread().getId());
                 } catch (Exception e) {
                     e.printStackTrace();
+                }finally {
+                    count.countDown();
                 }
-                System.out.println("Thread id is "+Thread.currentThread().getId());
             }
         };
     }
-
-   /* public static  void  printNum(Integer i){
-        num.addAndGet(i);//相当于+ 的操作
-    }*/
 }
