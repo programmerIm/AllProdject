@@ -1,5 +1,7 @@
 package com.test.suanfa.demo.sort;
 
+import java.util.Arrays;
+
 /**
  * @auther :liming
  * @Description: 冒泡排序，每轮找到最大值
@@ -8,11 +10,9 @@ package com.test.suanfa.demo.sort;
 public class BubbleSort {
     public static void main(String[] args) {
       int[] array = {6, 5, 3, 1, 8, 7, 2, 4 };
-        cookSort(array);
-       // sort(array);
-        for(int i:array){
-            System.out.print(i+" ");
-        }
+        cookSort(array);//鸡尾排序
+       // sort(array); //冒泡
+        System.out.println(Arrays.toString(array));
     }
 
    //普通冒泡排序
@@ -27,7 +27,7 @@ public class BubbleSort {
     }
 
     /**
-     * 机尾 冒泡排序 是普通的升级，先从小到大，然后从大到小
+     * 鸡尾 冒泡排序 是普通的升级，先从小到大，然后从大到小
      * @param array
      */
     public static  void cookSort(int[] array){
@@ -47,7 +47,6 @@ public class BubbleSort {
             }
             left ++;
         }
-
     }
 
     private static void swap(int[] array, int k,int j ) {
@@ -55,5 +54,4 @@ public class BubbleSort {
         array[k] = array[j];
         array[j] = temp;
     }
-
 }
