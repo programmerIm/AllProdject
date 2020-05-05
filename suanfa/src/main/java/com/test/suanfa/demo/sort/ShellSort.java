@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 /**
  * @auther :liming
- * @Description:
+ * @Description: 希尔排序-将数组一次次分组，进行插入排序
  * @Date: create in 2020/4/29 15:33
  */
 public class ShellSort {
@@ -14,6 +14,7 @@ public class ShellSort {
         System.out.println(Arrays.toString(arry));
     }
 
+    //普通版
     private static void sort(int[] arry) {
         int temp = 0;
         for (int grap = arry.length / 2; grap > 0; grap /= 2) {  //将数组进行分组；grap 步长
@@ -29,6 +30,7 @@ public class ShellSort {
         }
     }
 
+    //升级版的希尔排序
     public static void sort2(int[] array) {
         for (int grap = array.length / 2; grap > 0; grap /= 2) {  //将数组进行分组；grap 步长
             for (int i = grap; i < array.length; i++) {//从步长位置开始，逐个对其所在数组进行直接插入排序
@@ -45,5 +47,4 @@ public class ShellSort {
             }
         }
     }
-
 }

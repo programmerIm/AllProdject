@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 /**
  * @auther :liming
- * @Description: 冒泡排序，每轮找到最大值
+ * @Description: 冒泡排序，每轮找到最大值，相邻两个做比较
  * @Date: create in 2020/4/28 21:45
  */
 public class BubbleSort {
