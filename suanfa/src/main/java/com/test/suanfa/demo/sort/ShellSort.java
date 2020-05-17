@@ -10,7 +10,7 @@ import java.util.Arrays;
 public class ShellSort {
     public static void main(String[] args) {
         int[] arry = {8, 9, 1, 7, 2, 3, 5, 4, 6, 0};
-        sort2(arry);
+        sort(arry);
         System.out.println(Arrays.toString(arry));
     }
 
