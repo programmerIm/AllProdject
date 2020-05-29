@@ -34,7 +34,7 @@ public class QuickSort {
             }
         }
         // 最后把基准放到前一个子数组的后边（taik+1）为小于基准数组后一位， 剩下的子数组既是大于基准的子数组
-        swap(array, tail + 1, right);
+        swap(array, tail + 1, pivot);
         return tail + 1;//返回当前基准的索引位置  ｛小于数组｝基准｛大于数组｝
     }
     private static void swap(int[] array, int k, int j) {
