@@ -7,7 +7,7 @@ import java.util.Map;
 
 /**
  * @auther :liming
- * @Description:
+ * @Description:最久未使用
  * @Date: create in 2020/5/5 1:21
  */
 public class LRU<K,V> {

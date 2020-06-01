@@ -40,7 +40,7 @@ public class ZookeeperHighLock extends ZookeeperAbstractLock {
             return true;
         }else {//如果当前节点不是排名第一，则获取它前面的节点名称，并赋值给beforePath
             int pathLength = PATH.length();
-            int wz = Collections.binarySearch(childrens, currentPath.substring(pathLength+1));
+            int wz = Collections.binarySearch(childrens, currentPath.substring(pathLength+1));//二分查找
             beforePath = PATH+"/"+childrens.get(wz-1);
         }
         return false;
