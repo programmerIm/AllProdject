@@ -1,4 +1,4 @@
-package com.bonc.executor;
+package com.bonc.springboot.executor;
 
 import org.apache.tomcat.util.threads.TaskThreadFactory;
 

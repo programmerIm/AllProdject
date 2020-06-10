@@ -1,4 +1,4 @@
-package com.bonc.demo;
+package com.bonc.springboot.demo;
 
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
@@ -52,7 +52,7 @@ class  SingData{
 public class CoustomerAndProducer {
     public static void main(String[] args) {
         SingData  singData = new SingData();
-            new Thread(()-> {
+       /*     new Thread(()-> {
             for (int i = 0; i < 5; i++){
                     singData.adddNumber();
              }
@@ -63,6 +63,6 @@ public class CoustomerAndProducer {
                     singData.delNumber();
                 }
 
-         }).start();
+         }).start();*/
   }
 }

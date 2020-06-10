@@ -1,4 +1,4 @@
-package com.bonc.demo;
+package com.bonc.springboot.demo;
 
 import java.util.concurrent.Semaphore;
 

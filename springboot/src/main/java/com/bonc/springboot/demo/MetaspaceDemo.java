@@ -1,4 +1,4 @@
-package com.bonc.demo;
+package com.bonc.springboot.demo;
 
 import org.springframework.cglib.proxy.Enhancer;
 import org.springframework.cglib.proxy.MethodInterceptor;
