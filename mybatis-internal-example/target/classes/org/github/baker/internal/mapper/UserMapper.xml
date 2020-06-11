@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.github.baker.internal.inter.UserInterface">
+    
+    <resultMap id="result" type="org.github.baker.internal.entity.User" >
+        <id column="id" jdbcType="BIGINT" property="id" />
+        <result column="user_name" jdbcType="VARCHAR" property="userName" />
+        <result column="create_time" jdbcType="DATE" property="createTime" />
+    </resultMap>
+    
+    
+    <select id="selectById" parameterType="int" resultMap="result">
+        select id,name from user where id = #{id}
+    </select>
+
+    <select id="selectAllUser"  resultMap="result">
+        select id,name from user where id = #{id}
+    </select>
+
+
+
+
+
+
+</mapper>
