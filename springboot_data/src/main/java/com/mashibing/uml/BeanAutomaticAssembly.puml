@@ -1,0 +1,13 @@
+@startuml
+SpringApplication.java -> SpringApplication.java: 1.run()方法启动
+SpringApplication.java -> SpringApplication.java: 2.refreshContext()刷新上下文
+SpringApplication.java ->SpringApplication.java:3.refresh()
+
+SpringApplication.java -> AbstractApplicationContext.java: 4.refresh()
+AbstractApplicationContext.java -> AbstractApplicationContext.java: 5.invokeBeanFactoryPostProcessors()真正开始bean的装配过程
+AbstractApplicationContext.java->PostProcessorRegistrationDelegate.java:6.invokeBeanFactoryPostProcessors()
+PostProcessorRegistrationDelegate.java-> PostProcessorRegistrationDelegate.java:7.postProcessBeanDefinitionRegistry()
+PostProcessorRegistrationDelegate.java ->ConfigurationClassPostProcessor.java:8.processConfigBeanDefinitions()
+ConfigurationClassPostProcessor.java->ConfigurationClassParser.java:9.processConfigBeanDefinitions()
+ConfigurationClassParser.java->ConfigurationClassParser.java:10.parse()完成带有@Configuration注解bean的装配
+@enduml
