@@ -5,7 +5,7 @@ import java.util.Arrays;
 
 /**
  * @auther :liming
- * @Description: 堆排序
+ * @Description: 堆排序  segment
  * @Date: create in 2020/6/17 11:55
  */
 public class HeapSort {
