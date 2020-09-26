@@ -18,6 +18,7 @@ import java.util.Map;
 //@Configuration
 public class DruidConfig {
     /*这是一个dev分支的提交 我就是要dev*/
+    /*这是我的第二个提交 dev */
 //    @ConfigurationProperties(prefix = "spring.datasource")
 //    @Bean
 //    public DataSource druidDataSource(){
