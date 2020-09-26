@@ -20,8 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a289d249-a804-4c31-b14a-eb207cb91e17" name="Default" comment="springboot源码 test 分支">
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mashibing/config/DruidConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/config/DruidConfig.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -204,7 +203,7 @@
       <workItem from="1592562618462" duration="93000" />
       <workItem from="1592568053033" duration="3201000" />
       <workItem from="1592611829565" duration="43000" />
-      <workItem from="1601129092842" duration="1840000" />
+      <workItem from="1601129092842" duration="1913000" />
     </task>
     <task id="LOCAL-00001" summary="springboot源码debug文件">
       <created>1592104360931</created>
@@ -248,7 +247,14 @@
       <option name="project" value="LOCAL" />
       <updated>1601130863535</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="springboot源码 test 分支">
+      <created>1601130954859</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1601130954859</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -331,19 +337,19 @@
       <path value="$PROJECT_DIR$/../../.." />
     </ignored-roots>
     <MESSAGE value="springboot源码debug文件" />
-    <MESSAGE value="springboot源码 test 分支" />
     <MESSAGE value="ignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="ignore" />
+    <MESSAGE value="springboot源码 test 分支" />
+    <option name="LAST_COMMIT_MESSAGE" value="springboot源码 test 分支" />
   </component>
   <component name="WindowStateProjectService">
     <state x="672" y="370" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1601129912967">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="672" y="370" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1040@0.0.1920.1040" timestamp="1601129912967" />
-    <state x="457" y="100" key="CommitChangelistDialog2" timestamp="1601130862048">
+    <state x="457" y="100" key="CommitChangelistDialog2" timestamp="1601130953402">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="457" y="100" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1601130862048" />
+    <state x="457" y="100" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1601130953402" />
     <state x="184" y="86" key="DiffContextDialog" timestamp="1601129845144">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -364,10 +370,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="817" y="433" key="VCS.EditChangelistDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1601130259029" />
-    <state x="552" y="239" key="Vcs.Push.Dialog.v2" timestamp="1601130878213">
+    <state x="552" y="239" key="Vcs.Push.Dialog.v2" timestamp="1601130957041">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="239" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1601130878213" />
+    <state x="552" y="239" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1601130957041" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1592574897612">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
