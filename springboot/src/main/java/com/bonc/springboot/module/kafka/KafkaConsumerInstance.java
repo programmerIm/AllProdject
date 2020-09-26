@@ -35,16 +35,31 @@ public class KafkaConsumerInstance {
         KafkaConsumer  consumer  = new KafkaConsumer(consumerConfig);
         consumer.assign(partitions);
 
-        ConsumerRecords<String, String> records = consumer.poll(pullTime);
-        List<Map<String,Object>>   AllList = new ArrayList<>();
-        for (ConsumerRecord record : records) {
-            HashMap<String, Object> order = JSON.parseObject(record.value().toString(),HashMap.class);
-            if(null==order){
-                System.out.println("mess is null ");
-                continue;
+        try {
+            while (true){
+                ConsumerRecords<String, String> records = consumer.poll(pullTime);
+                List<Map<String,Object>>   AllList = new ArrayList<>();
+                for (ConsumerRecord record : records) {
+                    HashMap<String, Object> order = JSON.parseObject(record.value().toString(),HashMap.class);
+                    if(null==order){
+                        System.out.println("mess is null ");
+                        continue;
+                    }
+                    AllList.add(order);//消费下来的消息
+                }
+                consumer.commitAsync();
             }
-            AllList.add(order);//消费下来的消息
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            try {
+                consumer.commitSync();
+            }finally {
+                consumer.close();
+            }
         }
-        consumer.close();
+
+
+
     }
 }
