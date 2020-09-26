@@ -16,12 +16,19 @@
         <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </expand>
-    <select />
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:test" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a289d249-a804-4c31-b14a-eb207cb91e17" name="Default" comment="springboot源码 test 分支">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mashibing/config/DruidConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/config/DruidConfig.java" afterDir="false" />
+    <list default="true" id="f7fc3d17-e517-48bf-a54c-985060fe1cd9" name="Revert &quot;springboot源码 test 分支&quot;" comment="Revert &quot;springboot源码 test 分支&quot;&#10;&#10;This reverts commit 32f3cceb">
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
     </list>
+    <list id="2ab095e6-7a72-4392-9331-262bbe2cb8a4" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -125,6 +132,7 @@
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
       <method v="2">
         <option name="Make" enabled="true" />
+        <option name="BSP.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
     <configuration name="SpringbootDataApplicationTests.contextLoads" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
@@ -300,7 +308,14 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="dev" />
+                        <option value="test" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="user">
+                    <value>
+                      <list>
+                        <option value="limingbonc" />
                       </list>
                     </value>
                   </entry>
@@ -329,8 +344,20 @@
             </list>
           </value>
         </entry>
+        <entry key="User">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="limingbonc" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <ignored-roots>
@@ -358,6 +385,18 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="592" y="218" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1592611877633" />
+    <state x="0" y="65" key="MergeDialog" timestamp="1601131853254">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="0" y="65" key="MergeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1601131853254" />
+    <state x="470" y="323" width="605" height="351" key="MultipleFileMergeDialog" timestamp="1601131853259">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="470" y="323" width="605" height="351" key="MultipleFileMergeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1601131853259" />
+    <state x="729" y="240" key="RollbackChangesDialog" timestamp="1601131730826">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="729" y="240" key="RollbackChangesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1601131730826" />
     <state x="461" y="164" key="SettingsEditor" timestamp="1601130615916">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -374,6 +413,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="239" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1601130957041" />
+    <state x="744" y="307" key="git4idea.merge.GitMergeDialog" timestamp="1601131690815">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="744" y="307" key="git4idea.merge.GitMergeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1601131690815" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1592574897612">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
