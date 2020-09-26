@@ -364,9 +364,9 @@
       <path value="$PROJECT_DIR$/../../.." />
     </ignored-roots>
     <MESSAGE value="springboot源码debug文件" />
-    <MESSAGE value="ignore" />
     <MESSAGE value="springboot源码 test 分支" />
-    <option name="LAST_COMMIT_MESSAGE" value="springboot源码 test 分支" />
+    <MESSAGE value="ignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="ignore" />
   </component>
   <component name="WindowStateProjectService">
     <state x="672" y="370" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1601129912967">
