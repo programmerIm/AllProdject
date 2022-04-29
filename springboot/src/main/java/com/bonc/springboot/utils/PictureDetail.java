@@ -7,12 +7,12 @@ import java.io.IOException;
 
 /**
  * @auther :liming
- * @Description:
+ * @Description: 打印到控制台
  * @Date: create in 2020/2/21 14:30
  */
-public class test {
+public class PictureDetail {
         public static void main(String[] args) throws IOException {
-            String path = "F:/我/j.jpg";//导入的图片
+            String path = "/Users/liming522/Desktop/WechatIMG49.jpeg";//导入的图片
             String base = "abcd";//用这里的字符填充图片
             BufferedImage image = ImageIO.read(new File(path));//读取图片，用缓冲对象接收
             //两层循环，遍历图片
