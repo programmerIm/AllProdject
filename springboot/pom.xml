@@ -208,6 +208,19 @@
 			</plugin>
 
 		</plugins>
+
+		<resources>
+			<resource>
+				<directory>src/resources</directory>
+				<includes>
+					<include>**/*.properties</include>
+					<include>**/*.xml</include>
+					<include>**/*.tld</include>
+					<include>**/*.xls</include>
+					<include>**/*.xlsx</include>
+				</includes>
+			</resource>
+		</resources>
 	</build>
 
 </project>

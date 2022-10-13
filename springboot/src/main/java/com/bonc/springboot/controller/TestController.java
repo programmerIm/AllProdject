@@ -5,6 +5,7 @@ import com.bonc.springboot.autoConfigure.TestProperties;
 import com.bonc.springboot.entity.ParamBo;
 import com.bonc.springboot.entity.TestClassQuery;
 import com.bonc.springboot.entity.User;
+import com.bonc.springboot.service.I18nService;
 import com.bonc.springboot.utils.SpringUtil;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -18,9 +19,11 @@ import org.springframework.util.ClassUtils;
 import org.springframework.web.bind.annotation.*;
 import com.bonc.springboot.service.TestService;
 import org.springframework.web.servlet.ModelAndView;
+import sun.util.locale.LocaleUtils;
 
 import java.io.File;
 import java.util.HashMap;
+import java.util.Locale;
 import  java.util.Map;
 
 @RestController  //一般有jsp交互就是用该注解
@@ -38,6 +41,12 @@ public class TestController {
     private Environment env;  //环境对象
 
     private Map<String,Object> map = new HashMap<>();
+
+    private final I18nService i18nService;
+
+    public TestController(I18nService i18nService) {
+        this.i18nService = i18nService;
+    }
 
     private String page ;
 
@@ -90,5 +99,15 @@ public class TestController {
      String path = ClassUtils.getDefaultClassLoader().getResource("").getPath();
        System.out.println(path);
        File file = new File(path+"/hello.txt");
+   }
+
+   @ApiOperation("测试国际化参数")
+   @RequestMapping(value = "/testI18n")
+    public  void testI18n(){
+     Locale  locale = new Locale("en","US");
+     String message = i18nService.getMessage("message.key.test",locale);
+     String message2 = i18nService.getMessage("message.key.testHeader",locale,0);
+     System.out.println("多语言是:"+message);
+     System.out.println("多语言是:"+message2);
    }
 }

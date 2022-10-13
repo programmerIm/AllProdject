@@ -3,7 +3,7 @@
     <include resource="org/springframework/boot/logging/logback/base.xml"/>
     <contextName>logback</contextName>
     <!--设置系统日志目录,方便引用-->
-    <property name="log.path" value="/logs"/>
+    <property name="log.path" value="Users/liming522/logs"/>
     <property name="line" value="-"/>
 
     <!-- 彩色日志 -->
