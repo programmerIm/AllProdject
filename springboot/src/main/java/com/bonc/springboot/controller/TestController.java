@@ -6,20 +6,16 @@ import com.bonc.springboot.entity.ParamBo;
 import com.bonc.springboot.entity.TestClassQuery;
 import com.bonc.springboot.entity.User;
 import com.bonc.springboot.service.I18nService;
-import com.bonc.springboot.utils.SpringUtil;
+import com.bonc.springboot.service.UserService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import org.aspectj.weaver.ast.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
-import org.springframework.stereotype.Controller;
 import org.springframework.util.ClassUtils;
 import org.springframework.web.bind.annotation.*;
-import com.bonc.springboot.service.TestService;
 import org.springframework.web.servlet.ModelAndView;
-import sun.util.locale.LocaleUtils;
 
 import java.io.File;
 import java.util.HashMap;
@@ -28,12 +24,12 @@ import  java.util.Map;
 
 @RestController  //一般有jsp交互就是用该注解
 @RequestMapping(value ="/springBootTest")
-@Api(description = "基础测试Controller",value = "/springBootTest")
+@Api(tags="基础测试Controller",value = "/springBootTest")
 public class TestController {
     private static Logger logger = LoggerFactory.getLogger(TestController.class);
 
     @Autowired
-    private  TestService  testService;
+    private UserService testService;
     @Autowired
     private TestProperties testProperties; //读取配置文件信息实体类
 
@@ -97,8 +93,8 @@ public class TestController {
    @RequestMapping(value = "/testPath")
     public  void testPath(){
      String path = ClassUtils.getDefaultClassLoader().getResource("").getPath();
-       System.out.println(path);
-       File file = new File(path+"/hello.txt");
+     System.out.println(path);
+     File file = new File(path+"/hello.txt");
    }
 
    @ApiOperation("测试国际化参数")

@@ -1,6 +1,5 @@
 package com.bonc.springboot.entity;
 
-import com.bonc.springboot.dao.TestMapper;
 import com.bonc.springboot.dao.UserMapper;
 import com.bonc.springboot.utils.SpringUtil;
 
@@ -14,9 +13,7 @@ public  class TestClassQuery {
     /*ApplicationContext appCtx = SpringUtil.getApplicationContext();
     public  TestDao dao = appCtx.getBean(TestDao.class);*/
     //或
-    public TestMapper dao = SpringUtil.getBean(TestMapper.class);
-
-//    public UserMapper userMapper = appCtx.getBean(UserMapper.class);
+    public UserMapper dao = SpringUtil.getBean(UserMapper.class);
 
     private  User user;
 

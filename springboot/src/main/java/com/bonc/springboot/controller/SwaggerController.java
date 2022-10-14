@@ -2,12 +2,11 @@ package com.bonc.springboot.controller;
 
 import com.bonc.springboot.entity.ParamBo;
 import com.bonc.springboot.entity.User;
-import com.bonc.springboot.service.TestService;
+import com.bonc.springboot.service.UserService;
 import io.swagger.annotations.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -21,11 +20,11 @@ import java.util.Map;
  */
 @Controller
 @RequestMapping("/swagger")
-@Api(description ="测试swagger使用这个Controller",value = "/swagger")
+@Api(tags ="测试swagger使用这个Controller",value = "/swagger")
 public class SwaggerController {
 
     @Autowired
-     private TestService testService;
+     private UserService userService;
 
     @Autowired
     private  ParamBo bo;
@@ -49,7 +48,7 @@ public class SwaggerController {
     public @ResponseBody ModelAndView TestSwagger(ParamBo bo){
 
         System.out.println("查询参数 name:"+bo.getUser().getName()+",age:"+ bo.getUser().getAge());
-        testService.queryUserByUserObject(bo);
+        userService.queryUserByUserObject(bo);
        if (bo.getUser()==null){
            System.out.println("没有该用户");
        }else{

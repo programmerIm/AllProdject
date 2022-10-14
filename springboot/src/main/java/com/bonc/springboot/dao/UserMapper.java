@@ -3,17 +3,15 @@ package com.bonc.springboot.dao;
 import com.bonc.springboot.entity.User;
 import org.apache.ibatis.annotations.Mapper;
 
+/**
+ * @author:liming
+ * @Description:
+ * @Date:create in 15:12 2018/5/30
+ */
 @Mapper
 public interface UserMapper {
-    int deleteByPrimaryKey(Integer id);
 
-    int insert(User record);
+      User queryUser(String message);
 
-    int insertSelective(User record);
-
-    User selectByPrimaryKey(Integer id);
-
-    int updateByPrimaryKeySelective(User record);
-
-    int updateByPrimaryKey(User record);
+     User  queryUserByObject(User user);
 }

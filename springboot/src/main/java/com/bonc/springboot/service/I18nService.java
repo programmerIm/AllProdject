@@ -11,7 +11,6 @@ import java.util.Locale;
  * @date: 2022/10/12 6:23 PM
  * @hope: The newly created file will not have a bug
  */
-@Component
 public class I18nService {
     private final  MessageSource messageSource;
 
