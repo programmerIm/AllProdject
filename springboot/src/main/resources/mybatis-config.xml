@@ -41,6 +41,7 @@
     </plugins>
 
     <mappers>
-        <mapper resource="sqlmap/test.xml"/>
+        <mapper resource="sqlmap/TestMapper.xml"/>
+        <mapper resource="sqlmap/UserMapper.xml"/>
     </mappers>
 </configuration>

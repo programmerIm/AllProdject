@@ -1,7 +1,9 @@
 package com.bonc.springboot.dao;
 
 import com.bonc.springboot.entity.User;
+import org.apache.ibatis.annotations.Mapper;
 
+@Mapper
 public interface UserMapper {
     int deleteByPrimaryKey(Integer id);
 
