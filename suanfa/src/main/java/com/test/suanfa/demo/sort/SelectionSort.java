@@ -7,7 +7,7 @@ package com.test.suanfa.demo.sort;
  */
 public class SelectionSort {
     public static void main(String[] args) {
-        int[] array = {6, 5, 3, 1, 8, 7, 2, 4};
+        int[] array = {6, 5, 3, 1, 8, 7, 2,2, 4};
         sort(array);
         for (int i : array) {
             System.out.print(i + " ");

@@ -10,8 +10,8 @@ import java.util.Arrays;
 public class BubbleSort {
     public static void main(String[] args) {
       int[] array = {6, 5, 3, 1, 8, 7, 2, 4 };
-        cookSort(array);//鸡尾排序
-       // sort(array); //冒泡
+        //cookSort(array);//鸡尾排序
+        sort(array); //冒泡
         System.out.println(Arrays.toString(array));
     }
 

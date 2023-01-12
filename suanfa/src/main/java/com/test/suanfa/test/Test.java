@@ -7,7 +7,7 @@ package com.test.suanfa.test;
  */
 public class Test {
     public static void main(String[] args) {
-        int i1 = 10;
+       /* int i1 = 10;
         i1++;
         System.out.println(i1);
 
@@ -33,6 +33,35 @@ public class Test {
 
         int i9 = 10;
         int i10 = i9++ + ++i9;
-        System.out.println(i10); //10+12=22
+        System.out.println(i10); //10+12=22*/
+       testTable();
     }
+
+
+    public  static  void testTable(){
+     /*   int waybillCode = 123456;
+
+        // 逻辑id
+        int  logi = waybillCode % 1024 ;
+
+        int ku  =  logi/128 +1 ;
+
+
+        int table = logi%128 + 1;
+        System.out.println("逻辑ID:" + logi);
+        System.out.println("库名:" + ku);
+        System.out.println("table:"+table);
+*/
+
+
+        int siteCode = 32;
+        int duanhao  = siteCode%32+1;
+        System.out.println("段号"+duanhao);
+        int waybillCode = 123456;
+        int duanneibiao = waybillCode%16+1;
+        System.out.println("段内表为"+duanneibiao);
+        int table = duanhao*32 +duanneibiao+1;
+        System.out.println("最终表名位"+table);
+    }
+
 }

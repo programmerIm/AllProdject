@@ -1,6 +1,5 @@
 package com.test.suanfa.demo.listNode;
 
-import java.util.List;
 
 /**
  * @auther :liming
