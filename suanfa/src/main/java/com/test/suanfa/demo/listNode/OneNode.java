@@ -49,7 +49,7 @@ public class OneNode {
         node4.setData(4);
         node4.setNext(null);
 
-        ListNode nextNode = reseveNode2(node1);
+        ListNode nextNode = reseveNode4(node1);
 
         while (nextNode!=null){
             System.out.print(nextNode.getData());
@@ -88,4 +88,50 @@ public class OneNode {
         }
         return  pre;
     }
+
+    // 三指针算法
+    public static ListNode reseveNode3(ListNode head){
+      // 初始化三个指针
+      ListNode pre = null;
+      ListNode mid = head;
+      ListNode next = head.next;
+
+      while (true){
+          // 修改mid节点的指针
+           mid.next = pre;
+
+          if(next == null){
+              break;
+          }
+
+          // 将三个指针向后移动
+          pre = mid;
+          mid = next;
+          next = next.next;
+      }
+
+      return mid;
+    }
+
+    // 引入新的链表,将旧链表从头结点开始一个个摘除，挂到新链表上
+    public static ListNode reseveNode4(ListNode head){
+      if(head==null||head.next==null){
+          return  head;
+      }
+
+      ListNode temp = null;
+      ListNode new_head = null;
+
+      while (head!=null){
+          temp = head;
+          // 将head从链表中摘除
+          head = head.next;
+          // 将head挂到新的链表上
+          temp.next = new_head;
+          // 指向新链表的头
+          new_head= temp;
+      }
+      return  new_head;
+    }
+
 }
