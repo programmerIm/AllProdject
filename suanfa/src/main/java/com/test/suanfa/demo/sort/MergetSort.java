@@ -86,4 +86,31 @@ public class MergetSort {
             tempLeft += 1;
         }
     }
+
+
+    public void merge(int [] array,int left,int mid,int right){
+        int [] temp = new int[right-left+1];
+        int p1 = left;
+        int p2 = mid+1;
+        int i = 0;
+
+        while (p1<=mid && p2<=right){
+            temp[i++] = array[p1]<=array[p2]?array[p1++]:array[p2++];
+        }
+
+        // 假如左边还有剩余
+        while (p1<=mid){
+            temp[i++] = array[p1++];
+        }
+
+        // 假如右边还有剩余
+        while (p2<=right){
+            temp[i++] = array[p2++];
+        }
+
+        // 将临时的数组放回原位
+        for (int j=0;j<temp.length;j++){
+            array[left+j] = temp[j];
+        }
+    }
 }
