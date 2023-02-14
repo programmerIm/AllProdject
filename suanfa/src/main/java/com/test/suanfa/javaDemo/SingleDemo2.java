@@ -10,12 +10,25 @@ public class SingleDemo2 {
     private SingleDemo2(){
 
     }
-    public static synchronized SingleDemo2 getInstance(){
+
+//    public static synchronized SingleDemo2 getInstance(){
+//        if(instance==null){
+//            instance = new SingleDemo2();
+//        }
+//        return instance;
+//    }
+
+    public static SingleDemo2 getInstance(){
         if(instance==null){
-            instance = new SingleDemo2();
+            synchronized (SingleDemo2.class){
+                if(instance==null){
+                    instance = new SingleDemo2();
+                }
+            }
         }
-        return instance;
+        return  instance;
     }
+
     private static void print(){
         System.out.println("这是我自己的方法");
     }
