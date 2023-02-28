@@ -1,4 +1,4 @@
-package com.test.suanfa.demo.sumDemo;
+package com.test.suanfa.demo.math;
 
 /**
  * @auther :liming
