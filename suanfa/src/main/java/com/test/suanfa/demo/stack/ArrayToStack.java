@@ -1,7 +1,5 @@
 package com.test.suanfa.demo.stack;
 
-import javax.persistence.criteria.CriteriaBuilder;
-
 /**
  * 数组构造栈
  * @author liming522
