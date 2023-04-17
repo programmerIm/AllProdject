@@ -3,7 +3,7 @@ import java.util.Scanner;
 /**
  * @auther :liming
  * @Description: 最大公约数与最小公倍数问题
- *  最大约数 用  更相减损法和辗转相除法
+ *  最大公约数 用  更相减损法和辗转相除法
  *  最大公倍数  用 两个数相乘除以最大公约数
  * @Date: create in 2020/6/20 19:10
  */
@@ -21,6 +21,28 @@ public class GreatestCommonDivisor {
 //6-2=4
 //4-2=2
 //2==2于是最大公约数就是2
+    public  static  int getMax(int[] nums){
+        int max = nums[0];
+        int min = nums[0];
+        for(int i=0;i<nums.length;i++){
+            max = Math.max(max,nums[i]);
+            min = Math.min(min,nums[i]);
+        }
+        // 得到最大，最小的数
+        int diff = 0;
+        while(true){
+            if(max == min){
+                return max;
+            }
+            diff =  max - min;
+            if(diff == min){
+                break;
+            }
+            max = Math.max(diff,min);
+            min = Math.min(diff,min);
+        }
+       return diff;
+    }
 
  //辗转相除法  : a=25,b=15，a%b=10,b%10=5,10%5=0,最后一个为被除数余数的除数就是5,5就是所求最大公约数
 
@@ -44,6 +66,8 @@ public class GreatestCommonDivisor {
             int int2= scanner.nextInt();
             System.out.println(int1*int2/methods(int1,int2));
         }
+
+        // 求最大公约数--递归法
         public static int methods(int int1,int int2){
             if(int1 == int2){
                 return int2;
