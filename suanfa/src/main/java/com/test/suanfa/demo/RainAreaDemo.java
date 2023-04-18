@@ -1,7 +1,5 @@
 package com.test.suanfa.demo;
 
-import javax.validation.constraints.Max;
-
 /**
  * @auther :liming
  * @Description: 雨滴面积

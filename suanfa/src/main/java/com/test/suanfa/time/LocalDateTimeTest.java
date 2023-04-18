@@ -1,6 +1,5 @@
 package com.test.suanfa.time;
 
-import org.junit.jupiter.api.Test;
 
 import java.time.*;
 
@@ -10,7 +9,6 @@ import java.time.*;
  * @Date:create in 2018/8/21   18:18
  */
 public class LocalDateTimeTest {
-    @Test
    public  void test1(){
     Instant ins = Instant.now();  //默认使用 UTC 时区
 		System.out.println(ins);
@@ -23,7 +21,6 @@ public class LocalDateTimeTest {
 		System.out.println(ins2);
     }
 
-    @Test
     public void test2(){
         LocalDateTime ldt = LocalDateTime.now();
         System.out.println(ldt);
@@ -45,7 +42,6 @@ public class LocalDateTimeTest {
         System.out.println(ldt.getSecond());
     }
 
-    @Test
     public void test7(){
         LocalDateTime ldt = LocalDateTime.now(ZoneId.of("Asia/Shanghai"));
         System.out.println(ldt);
