@@ -13,6 +13,8 @@ public class BuildMaxHuiWen {
     public static void main(String[] args) {
         System.out.println(buildMaxHuiWen("ccc"));
     }
+
+    // 方法1：
     public static int buildMaxHuiWen(String s){
         int result = 0;
         // 统计每个字符串出现的次数，出现单次的只能选一个，出现双次的都可以选
@@ -42,5 +44,31 @@ public class BuildMaxHuiWen {
 
         }
         return  result;
+    }
+
+    // 方法2：求出所有回文子字符串，比较长度
+    private static String getMaxHuiWenString(String str) {
+        String result = "";
+        // 利用双指针算法,一个从头部，一个从尾部
+        for (int i = str.length(); i>0 ;i--){ // 从length开始是因为截取的 左闭右开
+            for (int j=0; j<i;j++){
+                String temp = str.substring(j,i);
+                if(check(temp)&& temp.length() >= result.length()){
+                    result = temp;
+                }
+            }
+        }
+        return result;
+    }
+
+    private static boolean check(String temp) {
+        char[] chars = temp.toCharArray();
+        int length = temp.length();
+        for (int i =0;i<length-1;i++){
+            if(chars[i]!=chars[length-i-1]){
+                return  false;
+            }
+        }
+        return true;
     }
 }
