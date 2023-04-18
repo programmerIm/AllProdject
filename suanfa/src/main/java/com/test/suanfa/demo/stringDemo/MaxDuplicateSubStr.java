@@ -13,8 +13,6 @@ public class MaxDuplicateSubStr {
 
     public static void main(String[] args) {
         String str = "abcadabc";
-        String ans = "abc";
-        str.indexOf(ans=str.substring(0,2));
         System.out.println(getMaxSubStr(str));
     }
 
