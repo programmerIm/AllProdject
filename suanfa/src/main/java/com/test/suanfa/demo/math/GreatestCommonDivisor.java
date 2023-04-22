@@ -53,7 +53,7 @@ public class GreatestCommonDivisor {
      * 输入两个正整数A和B。
      * 输出描述:
      * 输出A和B的最小公倍数。
-     *
+     *  最小公倍数 = A * B / 最大公约数
      * 示例1
      * 输入
      * 5 7
@@ -64,6 +64,10 @@ public class GreatestCommonDivisor {
             Scanner scanner = new Scanner(System.in);
             int int1= scanner.nextInt();
             int int2= scanner.nextInt();
+            // 最大公约数
+            System.out.println(methods(int1,int2));
+            System.out.println(gcd(int1,int2));
+            // 最小公倍数
             System.out.println(int1*int2/methods(int1,int2));
         }
 
@@ -79,5 +83,12 @@ public class GreatestCommonDivisor {
                 int differ= int2-int1;
                 return methods(int1,differ);
             }
+        }
+
+        /**
+         * 最大公约数
+         */
+        public static int gcd(int a,int b){
+            return b!=0?gcd(b,a%b):a;
         }
 }
