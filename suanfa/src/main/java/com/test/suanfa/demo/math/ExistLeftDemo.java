@@ -1,4 +1,4 @@
-package com.test.suanfa.demo;
+package com.test.suanfa.demo.math;
 
 /**
  *  二分查找第一个等于目标数的最左索引、左右索引

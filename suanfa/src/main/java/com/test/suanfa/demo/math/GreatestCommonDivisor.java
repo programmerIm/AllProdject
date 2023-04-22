@@ -44,7 +44,13 @@ public class GreatestCommonDivisor {
        return diff;
     }
 
- //辗转相除法  : a=25,b=15，a%b=10,b%10=5,10%5=0,最后一个为被除数余数的除数就是5,5就是所求最大公约数
+    /**
+     * 最大公约数
+     * 辗转相除法  : a=25,b=15，a%b=10,b%10=5,10%5=0,最后一个为被除数余数的除数就是5,5就是所求最大公约数
+     */
+    public static int gcd(int a,int b){
+        return b!=0?gcd(b,a%b):a;
+    }
 
     /**
      * 题目描述
@@ -85,10 +91,5 @@ public class GreatestCommonDivisor {
             }
         }
 
-        /**
-         * 最大公约数
-         */
-        public static int gcd(int a,int b){
-            return b!=0?gcd(b,a%b):a;
-        }
+
 }

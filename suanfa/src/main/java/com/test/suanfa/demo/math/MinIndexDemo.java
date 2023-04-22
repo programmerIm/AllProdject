@@ -1,4 +1,4 @@
-package com.test.suanfa.demo;
+package com.test.suanfa.demo.math;
 
 /**
  * 求局部最小值
