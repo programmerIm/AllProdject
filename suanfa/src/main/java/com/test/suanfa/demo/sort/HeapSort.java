@@ -12,7 +12,6 @@ public class HeapSort {
         int[] arry = {8,1,3,5,9,7,2,0};
         heapSort(arry); //进行升序排序
       //  heapSort2(arry); //进行降序排序
-
         System.out.println(Arrays.toString(arry));
     }
 
