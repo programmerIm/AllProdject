@@ -20,14 +20,14 @@ public class Juzhen {
         if(array==null||array.length==0){
             return new int[0];
         }
-        int colunms = array.length;
+        int columns = array.length;
         int rows = array[0].length;
-        int[] result = new int[rows * colunms];
+        int[] result = new int[rows * columns];
         // 结果的索引
         int index = 0;
 
         // 初始化上下左右的值
-        int top = 0, botom = colunms - 1, left = 0, right = rows - 1;
+        int top = 0, botom = columns - 1, left = 0, right = rows - 1;
         while (left <= right && top <= botom) {
             // 从左到右打印横行
             for (int i = left; i < right; i++) {
