@@ -12,6 +12,7 @@ public class SubArrayDp {
         method1(array,array.length);
     }
 
+
     public  static  int method1(int A[], int n){
             // 创建一个大小为 n 的辅助数组
             int[] tailTable = new int[n];
@@ -51,6 +52,7 @@ public class SubArrayDp {
         return  right;
     }
 
+    // 普通动态规划问题，辅助数组含义为以某个节点为结尾，其余自增子序列多长
     public static  int method2(){
         int[] array = {1,10,4,6,8,11,2};
         int maxLength = 1;
